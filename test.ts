@@ -5,7 +5,6 @@
 // License, v2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/
 
-import path from "path";
 
 import { WebpackConfigParams } from "@lichtblick/suite-desktop/src/WebpackConfigParams";
 import { webpackDevServerConfig } from "@lichtblick/suite-desktop/src/webpackDevServerConfig";
@@ -17,7 +16,7 @@ import { webpackRendererConfig } from "@lichtblick/suite-desktop/src/webpackRend
 import packageJson from "../package.json";
 
 const params: WebpackConfigParams = {
-  packageJson,
+  outputPath: path.resolve(__dirname, ".webpack"),
   outputPath: path.resolve(__dirname, ".webpack"),
   prodSourceMap: "source-map",
   rendererContext: path.resolve(__dirname, "renderer"),
